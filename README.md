@@ -32,6 +32,7 @@ python main.py
 
 ## The code used 
 [Ollama](https://github.com/ollama/ollama/tree/main)
+
 [Aiogram](https://github.com/aiogram/aiogram)
 
 ## Thanks
