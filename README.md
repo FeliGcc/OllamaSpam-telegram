@@ -11,6 +11,7 @@
 
 # Install 
 ✓ Install latest [Python](https://python.org/downloads)
+
 ✓ Clone Repository
 ```
 git clone https://github.com/FeliGcc/OllamaSpam-telegram/
