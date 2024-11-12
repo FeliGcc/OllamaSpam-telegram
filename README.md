@@ -2,7 +2,7 @@
 > "A Telegram bot for public or private groups, it uses the Ollama API to differentiate a message from spam."
 
 <p align="center">
-  <img src="Screenshot" alt="Pic" width="400"/>
+  <img src="Screenshot.png" alt="Pic" width="400"/>
 </p>
 
 # Commands
