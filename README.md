@@ -6,9 +6,9 @@
 </p>
 
 # Commands
-/r - The main and only function for working with API. To make it work you need to reply to a message with the /r command.
+`/r` - The main and only function for working with API. To make it work you need to reply to a message with the /r command.
 
-/start - Just printing the welcome message.
+`/start` - Just printing the welcome message.
 
 # Install 
 ✓ Install latest [Python](https://python.org/downloads)
