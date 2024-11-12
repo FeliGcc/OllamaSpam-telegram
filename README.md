@@ -25,7 +25,9 @@ python main.py
 ```
 # Subject to change
 `TOKEN` - Need to change to your TOKEN, [how do I get it?](https://core.telegram.org/bots/tutorial#obtain-your-bot-token). The token should be placed in the config folder, in the conf.py file.
+
 `timeout` - The comments to the request.py function and the /r command specify what is responsible for what.
+
 `modelname` - Change to the name of your model. In my case I used llama3.2 with modified [modelfile](https://github.com/ollama/ollama/blob/main/docs/modelfile.md) for specific answers: spam or not.
 
 ## The code used 
