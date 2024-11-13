@@ -1,5 +1,6 @@
 import logging
 import asyncio
+from datetime import timedelta, datetime
 from aiogram import Router, types
 from aiogram.filters import Command
 from function.request import generate_response
@@ -54,3 +55,35 @@ async def risk_in_group(message: types.Message):
 
     except Exception as e:
         await message.reply(f"Error: {str(e)}")
+
+#The basis of checking whether it is spam or not
+async def send_response(message, full_response):
+    
+    text = full_response.strip()
+    await message.reply(text)
+    logging.info(f"[Response]: '{text}' for {message.from_user.first_name} {message.from_user.last_name}")
+    
+    if is_spam(text):
+        await handle_spam(message)
+#Function determines if the response text is spam, the AI only responds with spam or not spam so check by such values
+def is_spam(response_text):
+    
+    if "not spam" in response_text.lower():
+        return False
+    elif "spam" in response_text.lower():
+        return True
+    return False
+
+async def handle_spam(message):
+    until_date = datetime.now() + timedelta(days=30) #Set the ban for 30 days
+    try:
+        await message.bot.ban_chat_member(
+            chat_id=message.chat.id, 
+            user_id=message.reply_to_message.from_user.id, 
+            until_date=until_date
+        )
+        await message.reply("Spam detected! User has been banned.")
+        logging.info(f"Banned {message.reply_to_message.from_user.id} for spam in chat {message.chat.id}")
+    except Exception as e:
+        await message.reply(f"Failed to ban user: {str(e)}")
+        logging.error(f"Failed to ban user {message.reply_to_message.from_user.id}: {str(e)}")
