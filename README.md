@@ -32,6 +32,8 @@ python main.py
 
 `modelname` - Change to the name of your model. In my case I used llama3.2 with modified [modelfile](https://github.com/ollama/ollama/blob/main/docs/modelfile.md) for specific answers: spam or not.
 
+`until_date` - Time for how long to block a user 
+
 ## The code used 
 [Ollama](https://github.com/ollama/ollama/tree/main)
 
